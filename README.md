@@ -23,7 +23,7 @@ $ cd fast_MRI_gt_parser/
 $ sh run.sh <URL/to/tar/archive> <path/to/target/folder>
 ```
 
-# Format of downloaded data
+# Description of downloaded data
 
 Let old_file.h5 it's a file before downloading.
 
