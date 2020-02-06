@@ -6,7 +6,7 @@ from watchdog.events import RegexMatchingEventHandler
 
 class HDF5EventHandler(RegexMatchingEventHandler):
 
-    HDF5_REGEX = [r".*\.h5$"]
+    HDF5_REGEX = [r".*[^_gt]\.h5$"]
 
     def __init__(self):
         super().__init__(self.HDF5_REGEX)
@@ -16,7 +16,7 @@ class HDF5EventHandler(RegexMatchingEventHandler):
 
         while file_size != os.path.getsize(event.src_path):
             file_size = os.path.getsize(event.src_path)
-            time.sleep(30)
+            time.sleep(10)
 
         self.process(event)
 
